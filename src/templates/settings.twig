@@ -1,0 +1,10 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.textField({
+  label: 'API Key',
+  placeholder: 'XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX',
+  name: 'hsApiKey',
+  value: settings['hsApiKey'],
+  required: true,
+  autofocus: true,
+}) }}

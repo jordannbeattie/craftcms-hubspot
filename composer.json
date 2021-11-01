@@ -1,0 +1,38 @@
+{
+    "name": "jordanbeattie/craftcms-hubspot",
+    "description": "Hubspot integration with craftcms",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin"
+    ],
+    "support": {},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jordan Beattie",
+            "homepage": "jordanbeattie.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "jordanbeattie\\hubspot\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Hubspot Integration",
+        "handle": "hubspot",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "",
+        "components": {
+            "hubspotservice": "jordanbeattie\\hubspot\\services\\Hubspotservice"
+        },
+        "class": "jordanbeattie\\hubspot\\Hubspot"
+    }
+}
