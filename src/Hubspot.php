@@ -120,10 +120,7 @@ class Hubspot extends Plugin
             Plugins::EVENT_AFTER_INSTALL_PLUGIN,
             function (PluginEvent $event) {
                 if ($event->plugin === $this) {
-                    //Add tracking code to template hook
-                    Craft::$app->view->hook('hubspot-plugin', function(&$context) {
-                        return HubspotVariable::getTrackingCode();
-                    });
+                    // do something
                 }
             }
         );
