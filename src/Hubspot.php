@@ -68,6 +68,21 @@ class Hubspot extends Plugin
                 $event->roots['hubspot'] = __DIR__ . '/available-templates';
             }
         );
+    
+        if( HubspotVariable::isUseable() )
+        {
+            Event::on(
+                Cp::class,
+                Cp::EVENT_REGISTER_CP_NAV_ITEMS,
+                function(RegisterCpNavItemsEvent $event) {
+                    $event->navItems[] = [
+                        'url' => HubspotVariable::getFormsUrl(),
+                        'label' => 'Hubspot Forms',
+                        'icon' => __DIR__ . '/nav-icon.svg',
+                    ];
+                }
+            );
+        }
         
     }
     

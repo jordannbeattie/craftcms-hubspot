@@ -48,11 +48,18 @@ class HubspotVariable
         /* End Check Api Key Is Set */
         
         /* Check plugin can be used */
-            public function isUseable()
+            public static function isUseable()
             {
                 return HubspotVariable::hasApiKey() && HubspotVariable::getPortalId();
             }
         /* End Check plugin can be used */
+    
+        /* Get forms URL */
+            public static function getFormsUrl()
+            {
+                return 'https://app.hubspot.com/forms/' . static::getPortalId();
+            }
+        /* End Get forms URL */
         
     /**** End Helpers ****/
     
