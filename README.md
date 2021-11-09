@@ -5,7 +5,6 @@ Enable the power of Hubspot CRM within CraftCMS.
 ### Forms
 Build and manage your forms in Hubspot and use the Hubspot Form field to get the ID.
 
-
 ## Requirements
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
@@ -16,17 +15,20 @@ composer require jordanbeattie/craftcms-hubspot
 
 From the control panel, install and enable the plugin.
 
-Include the following variables in your `.env` file, replacing the items in the [] with your keys.
-
-```
-HUBSPOT_API_KEY="[YOUR-API-KEY]"
-HUBSPOT_PORTAL_ID="[YOUR-PORTAL-ID]"
-```
+Set your [Hubspot API Key](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) in the settings page.
 
 ## Usage
+You can use the Hubspot Form field type to allow users to select a form from Hubspot. Then, in your template, simply include the form partial to render your form. 
+```
+{% include 'hubspot/form' with { 
+    form: myHubspotFormFieldHandle 
+} %}
+```
+
+## Maintenance
 This package is maintained on an as-needed basis. Feature requests and bug reports are welcomed.
 
-##Contact
+## Contact
 Jordan Beattie. <br>
 jordan@jordanbeattie.com <br>
 www.jordanbeattie.com
