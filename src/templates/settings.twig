@@ -1,9 +1,10 @@
 {% import '_includes/forms' as forms %}
 
-{{ forms.textField({
+{{ forms.autosuggestField({
   label: 'API Key',
   name: 'hsApiKey',
   value: settings['hsApiKey'],
   required: true,
   autofocus: true,
+  suggestEnvVars: true
 }) }}

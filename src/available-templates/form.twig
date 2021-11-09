@@ -7,8 +7,8 @@
             formId: "{{ form }}"
         });
 	</script>
-{% elseif craft.hubspot.isUseable() %}
-	<script>console.log('there was an error with the form passed')</script>
+{% elseif not craft.hubspot.hasApiKey %}
+	<script>console.log('There was an issue rendering the form. Check that your API Key has been set.')</script>
 {% else %}
-	<script>console.log('The Hubspot plugin could not reach Hubspot to render the form.')</script>
+	<script>console.log('There was an issue rendering the form. Check that you have passed a correct form ID.')</script>
 {% endif %}

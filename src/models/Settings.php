@@ -1,6 +1,8 @@
 <?php
 namespace jordanbeattie\hubspot\models;
 
+use Craft;
+
 class Settings extends \craft\base\Model
 {
     public $hsApiKey;
@@ -11,4 +13,10 @@ class Settings extends \craft\base\Model
             [['hsApiKey'], 'required']
         ];
     }
+    
+    public function getHsApiKey(): string
+    {
+        return Craft::parseEnv($this->hsApiKey);
+    }
+    
 }
