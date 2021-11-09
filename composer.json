@@ -25,14 +25,12 @@
         }
     },
     "extra": {
-        "name": "Hubspot Integration",
+        "name": "Hubspot Forms",
         "handle": "hubspot",
-        "hasCpSettings": false,
+        "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "",
-        "components": {
-            "hubspotservice": "jordanbeattie\\hubspot\\services\\Hubspotservice"
-        },
+        "components": {},
         "class": "jordanbeattie\\hubspot\\Hubspot"
     }
 }

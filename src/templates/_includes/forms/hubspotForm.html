@@ -5,13 +5,20 @@
 
 {% set options = [] %}
 
-{% for form in craft.hubspot.getForms() %}
-  {% set option = {
-    label: form.name,
-    value: form.guid
-  } %}
-  {% set options = options|merge( [ option ] ) %}
-{% endfor %}
+{% if craft.hubspot.isUseable() %}
+    {% for form in craft.hubspot.getForms() %}
+        {% set option = {
+            label: form.name,
+            value: form.guid
+        } %}
+        {% set options = options|merge( [ option ] ) %}
+    {% endfor %}
+{% else %}
+    {% set options = options|merge( [{
+        label: 'NO API KEY SET',
+        value: 0
+    }] ) %}
+{% endif %}
 
 
 {%- set options = (options is defined ? options : []) %}
