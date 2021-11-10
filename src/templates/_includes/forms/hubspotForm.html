@@ -6,10 +6,10 @@
 {% set options = [] %}
 
 {% if craft.hubspot.isUseable() %}
-    {% for form in craft.hubspot.getForms() %}
+    {% for label, id in craft.hubspot.getForms() %}
         {% set option = {
-            label: form.name,
-            value: form.guid
+            label: label,
+            value: id
         } %}
         {% set options = options|merge( [ option ] ) %}
     {% endfor %}

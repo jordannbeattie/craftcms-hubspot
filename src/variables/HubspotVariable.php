@@ -66,8 +66,18 @@ class HubspotVariable
     public static function getForms(){
         try
         {
+            $forms = [];
             $response = HubspotVariable::client()->request('GET', HubspotVariable::makeUrl("/forms/v2/forms"));
-            return $response = json_decode($response->getBody());
+            $response = json_decode($response->getBody());
+            foreach( $response as $form )
+            {
+                if( property_exists($form, 'guid') && property_exists($form, 'name') )
+                {
+                    $forms[$form->name] = $form->guid;
+                }
+            }
+            ksort($forms);
+            return $forms;
         }
         catch( \Exception $e )
         {
