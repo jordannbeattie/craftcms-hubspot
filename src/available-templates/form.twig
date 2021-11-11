@@ -7,8 +7,6 @@
             formId: "{{ form }}"
         });
 	</script>
-{% elseif not craft.hubspot.hasApiKey %}
-	<script>console.log('There was an issue rendering the form. Check that your API Key has been set.')</script>
 {% else %}
-	<script>console.log('There was an issue rendering the form. Check that you have passed a correct form ID.')</script>
+	<script>console.log('There was an issue rendering the form. Check that you have passed a correct form ID and that your API key is set correctly.')</script>
 {% endif %}
