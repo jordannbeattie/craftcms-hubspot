@@ -18,11 +18,9 @@ From the control panel, install and enable the plugin.
 Set your [Hubspot API Key](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) in the settings page.
 
 ## Usage
-You can use the Hubspot Form field type to allow users to select a form from Hubspot. Then, in your template, simply include the form partial to render your form. 
+You can use the Hubspot Form field type to allow users to select a form from Hubspot. Then, in your template, simply use the render function to render your form. 
 ```
-{% include 'hubspot/form' with { 
-    form: myHubspotFormFieldHandle 
-} %}
+{{ craft.hubspot.render(myHubspotFormField) }}
 ```
 
 ## Maintenance
