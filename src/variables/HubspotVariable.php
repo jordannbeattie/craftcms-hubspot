@@ -83,8 +83,14 @@ class HubspotVariable
         {
             return [];
         }
-     }
-
-
+    }
+    
+    public function render($form)
+    {
+        echo Craft::$app->view->renderTemplate('hubspot/form', [
+            'form' => $form,
+            'portal' => static::getPortalId()
+        ]);
+    }
 
 }
