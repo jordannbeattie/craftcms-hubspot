@@ -22,12 +22,12 @@ class HubspotForm extends Field
         return Craft::t('hubspot', 'Hubspot Forms');
     }
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         return false;
     }
 
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
 
 		$view = Craft::$app->getView();

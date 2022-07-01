@@ -7,7 +7,7 @@ class Settings extends \craft\base\Model
 {
     public $hsApiKey;
     
-    public function rules()
+    public function rules(): array
     {
         return [
             [['hsApiKey'], 'required']

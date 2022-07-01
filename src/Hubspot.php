@@ -26,8 +26,8 @@ class Hubspot extends Plugin
 {
     
     public static $plugin;
-    public $schemaVersion = '1.0.0';
-    public $hasCpSettings = true;
+    public string $schemaVersion = '1.0.0';
+    public bool $hasCpSettings = true;
     
     public function init()
     {
@@ -86,11 +86,11 @@ class Hubspot extends Plugin
         
     }
     
-    protected function createSettingsModel(){
+    protected function createSettingsModel(): ?\craft\base\Model{
         return new \jordanbeattie\hubspot\models\Settings();
     }
 
-    protected function settingsHtml(){
+    protected function settingsHtml(): ?string{
         return \Craft::$app->getView()->renderTemplate('hubspot/settings', [
             'settings' => $this->getSettings()
         ]);
