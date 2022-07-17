@@ -1,6 +1,15 @@
 {% import '_includes/forms' as forms %}
 
 {{ forms.autosuggestField({
+  label: 'Portal ID',
+  name: 'hsPortalId',
+  value: settings['hsPortalId'],
+  required: true,
+  autofocus: true,
+  suggestEnvVars: true
+}) }}
+
+{{ forms.autosuggestField({
   label: 'API Key',
   name: 'hsApiKey',
   value: settings['hsApiKey'],

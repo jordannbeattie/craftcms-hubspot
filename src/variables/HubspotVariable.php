@@ -24,19 +24,11 @@ class HubspotVariable
                 $apiKey = \jordanbeattie\hubspot\Hubspot::getInstance()->settings->getHsApiKey();
                 return "https://api.hubapi.com" . $partial . "?hapikey=" . $apiKey . "&state=PUBLISHED";
             }
-        /* End Create the request url */
-        
-        /* Get Portal Id */
+            /* End Create the request url */
+            
+            /* Get Portal Id */
             public static function getPortalId(){
-                try{
-                    $response = HubspotVariable::client()->request('GET', HubspotVariable::makeUrl("/cos-domains/v1/domains"));
-                    $response = json_decode($response->getBody());
-                    return $response->objects[0]->portalId;
-                }
-                catch(\Exception $e)
-                {
-                    return false;
-                }
+                return \jordanbeattie\hubspot\Hubspot::getInstance()->settings->getHsPortalId();
             }
         /* Get Portal Id */
         
@@ -89,7 +81,7 @@ class HubspotVariable
     {
         echo Craft::$app->view->renderTemplate('hubspot/form', [
             'form' => $form,
-            'portal' => static::getPortalId()
+            'portal' => static::getHsPortalId()
         ]);
     }
 
