@@ -22,7 +22,7 @@ class HubspotVariable
         /* Create the request url */
             protected static function makeUrl($partial){
                 $apiKey = \jordanbeattie\hubspot\Hubspot::getInstance()->settings->getHsApiKey();
-                return "https://api.hubapi.com" . $partial . "?hapikey=" . $apiKey . "&state=PUBLISHED";
+                return "https://hubcraft.jordanbeattie.com/api" . $partial . "?apiKey=" . $apiKey;
             }
             /* End Create the request url */
             
@@ -59,13 +59,13 @@ class HubspotVariable
         try
         {
             $forms = [];
-            $response = HubspotVariable::client()->request('GET', HubspotVariable::makeUrl("/forms/v2/forms"));
+            $response = HubspotVariable::client()->request('GET', HubspotVariable::makeUrl("/forms"));
             $response = json_decode($response->getBody());
             foreach( $response as $form )
             {
-                if( property_exists($form, 'guid') && property_exists($form, 'name') )
+                if( property_exists($form, 'id') && property_exists($form, 'name') )
                 {
-                    $forms[$form->name] = $form->guid;
+                    $forms[$form->name] = $form->id;
                 }
             }
             ksort($forms);
