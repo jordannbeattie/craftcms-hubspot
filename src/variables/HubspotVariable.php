@@ -81,7 +81,7 @@ class HubspotVariable
     {
         echo Craft::$app->view->renderTemplate('hubspot/form', [
             'form' => $form,
-            'portal' => static::getHsPortalId()
+            'portal' => static::getPortalId()
         ]);
     }
 
