@@ -26,8 +26,6 @@ class Hubspot extends Plugin
 {
     
     public static $plugin;
-    // public string $schemaVersion = '1.0.0';
-    // public bool $hasCpSettings = true;
     
     public function init()
     {
