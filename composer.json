@@ -6,7 +6,9 @@
         "craft",
         "cms",
         "craftcms",
-        "craft-plugin"
+        "craft-plugin",
+        "HubSpot",
+        "forms"
     ],
     "support": {},
     "license": "MIT",
@@ -25,8 +27,8 @@
         }
     },
     "extra": {
-        "name": "Hubspot Forms",
-        "handle": "hubspot",
+        "name": "HubCraft",
+        "handle": "hubcraft",
         "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "",
