@@ -16,12 +16,12 @@ class Settings extends \craft\base\Model
         ];
     }
     
-    public function getHsApiKey(): string
+    public function getHsApiKey(): ?string
     {
         return Craft::parseEnv($this->hsApiKey);
     }
     
-    public function getHsPortalId(): string
+    public function getHsPortalId(): ?string
     {
         return Craft::parseEnv($this->hsPortalId);
     }
